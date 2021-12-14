@@ -64,34 +64,18 @@ function generateDeck(): Card[] {
 
 function getSuite(suite: string, color: string): Card[] {
 	let cards: Card[] = [];
-
-	const two: Card = new Card(TWO, suite, color);
-	const three: Card = new Card(THREE, suite, color);
-	const four: Card = new Card(FOUR, suite, color);
-	const five: Card = new Card(FIVE, suite, color);
-	const six: Card = new Card(SIX, suite, color);
-	const seven: Card = new Card(SEVEN, suite, color);
-	const eight: Card = new Card(EIGHT, suite, color);
-	const nine: Card = new Card(NINE, suite, color);
-	const ten: Card = new Card(TEN, suite, color);
-	const jack: Card = new Card(JACK, suite, color);
-	const queen: Card = new Card(QUEEN, suite, color);
-	const king: Card = new Card(KING, suite, color);
-	const ace: Card = new Card(ACE, suite, color);
-
-	cards.push(two);
-	cards.push(three);
-	cards.push(four);
-	cards.push(five);
-	cards.push(six);
-	cards.push(seven);
-	cards.push(eight);
-	cards.push(nine);
-	cards.push(ten);
-	cards.push(jack);
-	cards.push(queen);
-	cards.push(king);
-	cards.push(ace);
-
+	cards.push(new Card(TWO, suite, color));
+	cards.push(new Card(THREE, suite, color));
+	cards.push(new Card(FOUR, suite, color));
+	cards.push(new Card(FIVE, suite, color));
+	cards.push(new Card(SIX, suite, color));
+	cards.push(new Card(SEVEN, suite, color));
+	cards.push(new Card(EIGHT, suite, color));
+	cards.push(new Card(NINE, suite, color));
+	cards.push(new Card(TEN, suite, color));
+	cards.push(new Card(JACK, suite, color));
+	cards.push(new Card(QUEEN, suite, color));
+	cards.push(new Card(KING, suite, color));
+	cards.push(new Card(ACE, suite, color));
 	return cards;
 }
