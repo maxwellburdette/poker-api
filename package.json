@@ -4,9 +4,10 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
+		"start": "ts-node ./src/app.ts",
 		"devStart": "nodemon ./src/app.ts",
 		"build": "docker build . -f deployment-config/Dockerfile -t gcr.io/poker-app-334822/poker-app",
-		"start": "docker run -p 8080:8080 -d -t gcr.io/poker-app-334822/poker-app",
+		"dockerStart": "docker run -p 8080:8080 -d -t gcr.io/poker-app-334822/poker-app",
 		"push": "docker push gcr.io/poker-app-334822/poker-app"
 	},
 	"author": "",
