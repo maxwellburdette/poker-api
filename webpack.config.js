@@ -2,6 +2,7 @@ const path = require("path");
 const { NODE_ENV = "production" } = process.env;
 module.exports = {
 	entry: "./src/app.ts",
+	devtool: "inline-source-map",
 	mode: NODE_ENV,
 	target: "node",
 	output: {
@@ -9,13 +10,14 @@ module.exports = {
 		filename: "app.js",
 	},
 	resolve: {
-		extensions: [".ts", ".js"],
+		extensions: [".tsx", ".ts", ".js"],
 	},
 	module: {
 		rules: [
 			{
 				test: /\.ts$/,
 				use: ["ts-loader"],
+				exclude: /node_modules/,
 			},
 		],
 	},
