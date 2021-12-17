@@ -5,16 +5,19 @@
 	"main": "index.js",
 	"scripts": {
 		"devStart": "nodemon ./src/app.ts",
-		"build": "docker build . -f deployment-config/Dockerfile -t gcr.io/poker-app-334822/poker-app",
+		"dockerBuild": "docker build . -f deployment-config/Dockerfile -t gcr.io/poker-app-334822/poker-app",
 		"start": "docker run -p 8080:8080 -d -t gcr.io/poker-app-334822/poker-app",
-		"push": "docker push gcr.io/poker-app-334822/poker-app"
+		"push": "docker push gcr.io/poker-app-334822/poker-app",
+		"build": "webpack"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
 		"@types/cors": "^2.8.12",
 		"@types/express": "^4.17.13",
-		"nodemon": "^2.0.15"
+		"nodemon": "^2.0.15",
+		"ts-loader": "^9.2.6",
+		"webpack-cli": "^4.9.1"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
