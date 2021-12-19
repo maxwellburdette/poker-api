@@ -20,6 +20,7 @@
 		{
 			"name": "gcr.io/google.com/cloudsdktool/cloud-sdk",
 			"id": "Deploying to US central",
+			"entrypoint": "gcloud",
 			"args": [
 				"run",
 				"deploy",
