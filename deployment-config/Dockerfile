@@ -5,11 +5,11 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install 
 
 # Bundle app source
 COPY . .
 
 EXPOSE 8080
 
-CMD [ "npm", "run", "devStart" ]
+CMD [ "npm", "start"]

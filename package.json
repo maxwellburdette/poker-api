@@ -2,12 +2,12 @@
 	"name": "template-api",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "src/app.ts",
 	"scripts": {
-		"start": "ts-node ./src/app.ts",
+		"start": "ts-node .",
 		"devStart": "nodemon ./src/app.ts",
-		"build": "docker build . -f deployment-config/Dockerfile -t gcr.io/poker-app-334822/poker-app",
-		"dockerStart": "docker run -p 8080:8080 -d -t gcr.io/poker-app-334822/poker-app",
+		"buildDocker": "docker build -f deployment-config/Dockerfile -t gcr.io/poker-app-334822/poker-app .",
+		"startDocker": "docker run -p 8080:8080 -d -t gcr.io/poker-app-334822/poker-app",
 		"push": "docker push gcr.io/poker-app-334822/poker-app"
 	},
 	"author": "",
