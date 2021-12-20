@@ -2,8 +2,7 @@
 
 ### Running MySQL locally:
 
-    gcloud sql connect poker-api-db \
-    --user=root
+    mysql -h poker-api-db.cerpjxlxhu8k.us-east-2.rds.amazonaws.com -P 3306 -u admin -p
 
 ## Connecting to VPC withing GCP
 

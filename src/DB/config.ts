@@ -6,9 +6,12 @@ const dbConnect = mysql.createConnection({
 	user: process.env.USERNAME,
 	password: process.env.PASSWORD,
 	port: process.env.DB_PORT,
-	//database: process.env.DATABASE,
+	database: process.env.DATABASE,
 });
 dbConnect.connect(function (err: any) {
+	console.log("Testing env vars");
+	console.log(`SQL_HOST: ${process.env.SQL_HOST}`);
+	console.log(`USER: ${process.env.USERNAME}`);
 	if (err) {
 		console.error("error connecting: " + err.stack);
 		return;
