@@ -68,4 +68,7 @@ router.post("/selectall", async (req: Request, res: Response) => {
 	}
 });
 
+//Create DB
+router.post("/create", async (req: Request, res: Response) => {});
+
 export default router;
