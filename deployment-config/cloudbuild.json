@@ -28,9 +28,20 @@
 				"--image",
 				"gcr.io/$PROJECT_ID/poker-api:$COMMIT_SHA",
 				"--region",
-				"us-central1"
+				"us-central1",
+				"--set-env-vars",
+				"SQL_HOST=${_SQL_HOST}",
+				"--set-env-vars",
+				"USERNAME=${_USERNAME}",
+				"--set-env-vars",
+				"PASSWORD=${_PASSWORD}",
+				"--set-env-vars",
+				"DB_PORT=${_DB_PORT}",
+				"--set-env-vars",
+				"DATABASE=${_DATABASE}"
 			]
 		}
 	],
-	"images": ["gcr.io/$PROJECT_ID/poker-api:$COMMIT_SHA"]
+	"images": ["gcr.io/$PROJECT_ID/poker-api:$COMMIT_SHA"],
+	"options": { "substitution_option": "ALLOW_LOOSE" }
 }

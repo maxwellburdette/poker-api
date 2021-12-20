@@ -1,0 +1,26 @@
+[
+	{
+		"name": "value",
+		"description": "Card value",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "suite",
+		"description": "Suite of Card",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "color",
+		"description": "Color of Card",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	{
+		"name": "uuid",
+		"description": "Unique identifier for Card",
+		"type": "STRING",
+		"mode": "REQUIRED"
+	}
+]
