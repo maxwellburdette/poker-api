@@ -1,22 +1,22 @@
-import express, { Response, Request } from "express";
+import express, { Response, Request, Router } from "express";
 import { v4 as uuidv4 } from "uuid";
 import Deck from "../Classes/Deck";
 import Card from "../Classes/Card";
 import putDeck from "../DB/InsertDeck";
-import tempDelete from "../DB/tempDelete";
 import tempSelectAll from "../DB/tempSelectAll";
 import draw from "../DB/GetCard";
 import deleteCard from "../DB/DeleteCard";
 import SQLError, { Error } from "../Classes/Error";
-const router = express();
+const router: Router = express.Router();
 
 router.post("/draw", async function (req: Request, res: Response) {
 	const tableId: string = req.body.deckId;
+	const numCards: number = req.body.numCards;
 	try {
-		const card: Promise<any> = await draw(tableId);
+		const card: Card[] = await draw(tableId, numCards);
 		const deleteRes = await deleteCard(tableId, card);
 		console.log(deleteRes);
-		res.json(card);
+		res.json(card.length > 1 ? card : card[0]);
 	} catch (err) {
 		const stackTrace: Error = new SQLError(err).stackTrace();
 		console.error(stackTrace);
@@ -42,19 +42,6 @@ router.post("/shuffle", async function (req: Request, res: Response) {
 	}
 });
 
-router.post("/drop", async function (req: Request, res: Response) {
-	const tableId = req.body.tableId;
-
-	try {
-		const test = await tempDelete(tableId);
-		res.json(test);
-	} catch (err) {
-		const stackTrace: Error = new SQLError(err).stackTrace();
-		console.error(stackTrace);
-		res.status(204).send();
-	}
-});
-
 //Temp
 router.post("/selectall", async (req: Request, res: Response) => {
 	const tableId = req.body.tableId;
@@ -67,8 +54,5 @@ router.post("/selectall", async (req: Request, res: Response) => {
 		res.status(204).send();
 	}
 });
-
-//Create DB
-router.post("/create", async (req: Request, res: Response) => {});
 
 export default router;
