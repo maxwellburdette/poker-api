@@ -38,7 +38,9 @@
 				"--set-env-vars",
 				"DB_PORT=${_DB_PORT}",
 				"--set-env-vars",
-				"DATABASE=${_DATABASE}"
+				"DATABASE=${_DATABASE}",
+				"--set-env-vars",
+				"AUTH_URL=${_AUTH_URL}"
 			]
 		}
 	],

@@ -20,7 +20,6 @@ export default async function deleteCard(
 }
 
 function runQuery(sql: string): Promise<Card> {
-	console.log(sql);
 	return new Promise((resolve, reject) => {
 		db.query(sql, function (error: any, results: any, fields: any) {
 			if (error) {
